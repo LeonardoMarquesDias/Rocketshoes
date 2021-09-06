@@ -27,7 +27,7 @@ const Home = (): JSX.Element => {
 
   const cartItemsAmount = cart.reduce((sumAmount, product) => {
     const newSumAmount = {...sumAmount};
-    newSumAmount[product.id] = product.amount;
+    newSumAmount[product.id] = product.amount; //acessar a chave de uma maneira dinamica [product.id]
 
     return newSumAmount;
   }, {} as CartItemsAmount)
@@ -38,7 +38,7 @@ const Home = (): JSX.Element => {
 
       const data = response.data.map(product => ({
         ...product,
-        priceFormatted: formatPrice(product.price)
+        priceFormatted: formatPrice(product.price) // formatando com priceFormatted: do ...product com formatPrice()
       }))
 
       setProducts(data);
