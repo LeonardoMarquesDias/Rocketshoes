@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useContext, useEffect, useRef, useState } from 'react';
 import { toast } from 'react-toastify';
 import { api } from '../services/api';
-import { Product, Stock } from '../types';
+import { Product } from '../types';
 
 interface CartProviderProps {
   children: ReactNode;
@@ -23,6 +23,7 @@ const CartContext = createContext<CartContextData>({} as CartContextData);
 
 export function CartProvider({ children }: CartProviderProps): JSX.Element {
   const [cart, setCart] = useState<Product[]>(() => {
+    // const storagedCart = Buscar dados do localStorage
     const storagedCart = localStorage.getItem('@RocketShoes:cart');
 
     if (storagedCart) {
@@ -32,46 +33,60 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
     return [];
   });
 
+  //acessar o estado anterior com o useRef, pra salvar no localStorage cada vez que hook for renderido
   const prevCartRef = useRef<Product[]>();
-
+  //toda vez que renderizar novamente o prevCartRef.current receba o valor de Cart
   useEffect(() => {
     prevCartRef.current = cart;
   })
 
   const cartPreviousValue = prevCartRef.current ?? cart;
-
+  //verificar se o valor atual do Card é diferente do Anterior ?? se for diferente atualizar para prevCartRef.current
   useEffect(() => {
-    if (cartPreviousValue !== cart) {
+    if (cartPreviousValue !== cart) { //o valor anterior do Card é diferente do Atual Card, se for setItem no localStorage 
       localStorage.setItem('@RocketShoes:cart', JSON.stringify(cart))
     }
-  }, [cart, cartPreviousValue]);
+  }, [cart, cartPreviousValue]); //essas duas propriedade para o useEffect monitorar
+
 
   const addProduct = async (productId: number) => {
     try {
+      //pegar todos os itens do carrinho
       const updatedCart = [...cart];
-      const productExists = updatedCart.find(product => product.id === productId)
 
+      //verificar se o produto ja existe no carrinho
+      const isProductOnCart = updatedCart.find(product => product.id === productId)
+
+      //pegar item em estoque pelo id do produto
       const stock = await api.get(`/stock/${productId}`);
 
+      //checar quantia no estoque
       const stockAmount = stock.data.amount;
+      //console.log("stockAmount " + stockAmount);
 
-      const currentAmount = productExists ? productExists.amount : 0;
+      //checar quantidade item do mesmo produto no carrinho
+      const currentAmount = isProductOnCart ? isProductOnCart.amount : 0;
+      //console.log("currentAmount " + currentAmount);
+
+      //Se nao existe item no carrinho, add +1
       const amount = currentAmount + 1;
 
+       //checar quantidade em realação ao estoque
       if (amount > stockAmount) {
         toast.error('Quantidade solicitada fora de estoque');
         return;
       }
 
-      if (productExists) {
-        productExists.amount = amount;
+      if (isProductOnCart) {
+        isProductOnCart.amount = amount;
       } else {
         const product = await api.get(`/products/${productId}`);
 
         const newProduct = {
           ...product.data,
           amount: 1
-        }
+        };
+        // console.log(newProduct);
         updatedCart.push(newProduct);
       }
 
@@ -85,7 +100,8 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
   const removeProduct = (productId: number) => {
     try {
       const updatedCart = [...cart];
-      const productIndex = updatedCart.findIndex(product => product.id === productId)
+      const productIndex = updatedCart.findIndex(
+        (product) => product.id === productId)
 
       if (productIndex >= 0) {
         updatedCart.splice(productIndex, 1);
@@ -107,8 +123,10 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         return;
       }
 
+      //pegar item em estoque pelo id do produto
       const stock = await api.get(`/stock/${productId}`);
 
+      //checar quantia no estoque
       const stockAmount = stock.data.amount;
 
       if (amount > stockAmount) {
@@ -144,3 +162,5 @@ export function useCart(): CartContextData {
 
   return context;
 }
+
+export default useCart;

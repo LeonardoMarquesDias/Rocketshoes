@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { MdAddShoppingCart } from 'react-icons/md';
 
 import { ProductList } from './styles';
@@ -21,16 +21,9 @@ interface CartItemsAmount {
   [key: number]: number;
 }
 
-const Home = (): JSX.Element => {
+export function Home() {
   const [products, setProducts] = useState<ProductFormatted[]>([]);
   const { addProduct, cart } = useCart();
-
-  const cartItemsAmount = cart.reduce((sumAmount, product) => {
-    const newSumAmount = {...sumAmount};
-    newSumAmount[product.id] = product.amount; //acessar a chave de uma maneira dinamica [product.id]
-
-    return newSumAmount;
-  }, {} as CartItemsAmount)
 
   useEffect(() => {
     async function loadProducts() {
@@ -51,6 +44,12 @@ const Home = (): JSX.Element => {
     addProduct(id);
   }
 
+  const cartItemsAmount = cart.reduce<CartItemsAmount>((sumAmount, product) => {
+    sumAmount[product.id] = product.amount; 
+
+    return sumAmount;
+  }, {})
+
   return (
     <ProductList>
       {products.map(product => (
@@ -65,7 +64,7 @@ const Home = (): JSX.Element => {
         >
           <div data-testid="cart-product-quantity">
             <MdAddShoppingCart size={16} color="#FFF" />
-            {cartItemsAmount[product.id] || 0} 
+            {cartItemsAmount[product.id] ?? 0} 
           </div>
 
           <span>ADICIONAR AO CARRINHO</span>
