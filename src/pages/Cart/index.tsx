@@ -112,12 +112,10 @@ export function Cart() {
         <button type="button">PROCEED TO CHECKOUT</button>
 
         <Total>
-          <span>TOTAL :</span><div> </div>
+          <span>TOTAL :</span>
           <strong>{total}</strong>
         </Total>
       </footer>
     </Container>
   );
 };
-
-export default Cart;

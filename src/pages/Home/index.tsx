@@ -74,5 +74,3 @@ export function Home() {
     </ProductList>
   );
 };
-
-export default Home;

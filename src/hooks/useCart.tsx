@@ -54,7 +54,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       //pegar todos os itens do carrinho
       const updatedCart = [...cart];
 
-      //verificar se o produto ja existe no carrinho
+      //verificar se o produto já existe no carrinho
       const isProductOnCart = updatedCart.find(product => product.id === productId)
 
       //pegar item em estoque pelo id do produto
@@ -68,7 +68,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       const currentAmount = isProductOnCart ? isProductOnCart.amount : 0;
       //console.log("currentAmount " + currentAmount);
 
-      //Se nao existe item no carrinho, add +1
+      //Se não existe item no carrinho, add +1
       const amount = currentAmount + 1;
 
        //checar quantidade em realação ao estoque
@@ -162,5 +162,3 @@ export function useCart(): CartContextData {
 
   return context;
 }
-
-export default useCart;

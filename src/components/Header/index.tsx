@@ -5,7 +5,7 @@ import logo from '../../assets/images/logo.svg';
 import { Container, Cart } from './styles';
 import { useCart } from '../../hooks/useCart';
 
-const Header = (): JSX.Element => {
+export function Header() {
   const { cart } = useCart();
   const cartSize = cart.length;
   // cart.length é 0, se for incrementado 1 será 1 item, se for mais sera itens.
@@ -30,4 +30,4 @@ const Header = (): JSX.Element => {
   );
 };
 
-export default Header;
+
