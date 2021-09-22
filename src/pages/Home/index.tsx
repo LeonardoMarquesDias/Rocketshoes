@@ -67,7 +67,7 @@ export function Home() {
             {cartItemsAmount[product.id] ?? 0} 
           </div>
 
-          <span>ADICIONAR AO CARRINHO</span>
+          <span>ADD TO CART</span>
         </button>
       </li>
       ))}

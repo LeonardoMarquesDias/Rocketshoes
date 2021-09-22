@@ -50,8 +50,8 @@ export function Cart() {
         <thead>
           <tr>
             <th aria-label="product image" />
-            <th>PRODUTO</th>
-            <th>QTD</th>
+            <th>PRODUCT</th>
+            <th>AMOUNT</th>
             <th>SUBTOTAL</th>
             <th aria-label="delete icon" />
           </tr>
@@ -109,10 +109,10 @@ export function Cart() {
       </ProductTable>
 
       <footer>
-        <button type="button">Finalizar pedido</button>
+        <button type="button">PROCEED TO CHECKOUT</button>
 
         <Total>
-          <span>TOTAL</span>
+          <span>TOTAL :</span><div> </div>
           <strong>{total}</strong>
         </Total>
       </footer>
