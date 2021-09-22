@@ -8,7 +8,7 @@ import { useCart } from '../../hooks/useCart';
 export function Header() {
   const { cart } = useCart();
   const cartSize = cart.length;
-  // cart.length é 0, se for incrementado 1 será 1 item, se for mais sera itens.
+  // cart.length é 0, se for incrementado 1 será Item, se for mais sera Itens.
   // cartSize === 1 ? `${cartSize} item` : `${cartSize} itens`
   
   return (
