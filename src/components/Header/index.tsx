@@ -21,7 +21,7 @@ export function Header() {
         <div>
           <strong>My Cart</strong>
           <span data-testid="cart-size">
-            {cartSize === 1 ? `${cartSize} product` : `${cartSize} products`} 
+            {cartSize === 1 ? `${cartSize} item` : `${cartSize} itens`} 
           </span>
         </div>
         <MdShoppingBasket size={36} color="#FFF" />
@@ -30,4 +30,4 @@ export function Header() {
   );
 };
 
-
+export default Header;

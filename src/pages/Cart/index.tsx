@@ -119,3 +119,5 @@ export function Cart() {
     </Container>
   );
 };
+
+export default Cart;

@@ -162,3 +162,5 @@ export function useCart(): CartContextData {
 
   return context;
 }
+
+export default useCart;
