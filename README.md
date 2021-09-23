@@ -43,7 +43,7 @@ This project was developed with the following technologies:
 
 ## ⚙️ Installation
 ```bash
-# You need to install Node.js and Yarn first, then in order to clone the project via HTTPS, run this command:
+# You need to install Node.js, then in order to clone the project via HTTPS, run this command:
 $ https://github.com/LeonardoMarquesDias/Rocketshoes-Cart-ReactJS.git
 # or use the download option.
 
@@ -58,9 +58,9 @@ or
 $ npm server
 
 # Run the following command to start the application in a development environment:
-$ yarn dev 
+$ yarn start
 or
-$ npm dev
+$ npm start
 
 # Access http://localhost:3000 
 ```
