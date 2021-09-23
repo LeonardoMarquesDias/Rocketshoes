@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./.github/ignite.png">
+  <img src="../../assets/ignite.png">
 </div>
 
 <h1 align="center"> RocketSeat 🔥 Ignite ReactJS </h1>
@@ -12,7 +12,16 @@
 </p>
 
 ## 🚀 About the Project
-.................
+
+This will be an application where your main objective is to create a shopping cart hook. You will have access to two pages, a component and a hook to implement the features requested in this challenge:
+
+* Add a new product to your cart
+* Remove a product from the cart
+* Change the quantity of a product in the cart
+* Calculation of sub-total and total cart prices
+* Stock validation
+* Displaying error messages
+* Between others
 
 ## 💻 Project Image
 
@@ -35,7 +44,7 @@ This project was developed with the following technologies:
 
 ## ⚙️ Installation
 ```bash
-# You need to install Node.js and Yarn first, then in order to clone the project via HTTPS, run this command:
+# You need to install Node.js, then in order to clone the project via HTTPS, run this command:
 $ https://github.com/LeonardoMarquesDias/Rocketshoes-Cart-ReactJS.git
 # or use the download option.
 
@@ -50,9 +59,9 @@ or
 $ npm server
 
 # Run the following command to start the application in a development environment:
-$ yarn dev 
+$ yarn start 
 or
-$ npm dev
+$ npm start
 
 # Access http://localhost:3000 
 ```
