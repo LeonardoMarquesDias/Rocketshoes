@@ -1,10 +1,10 @@
 <div align="center">
-  <img src="../../assets/ignite.png">
+  <img src="src/assets/ignite.png">
 </div>
 
 <h1 align="center"> RocketSeat 🔥 Ignite ReactJS </h1>
 
-<h2 align="center"> challenge 02 : Componentizing the App ( Project Rocketshoes ) </h2>
+<h2 align="center"> challenge 01 : Componentizing the App ( Project Rocketshoes ) </h2>
 
 <p align="center">
   <a href="https://rocketseat.com.br">
@@ -12,7 +12,6 @@
 </p>
 
 ## 🚀 About the Project
-
 This will be an application where your main objective is to create a shopping cart hook. You will have access to two pages, a component and a hook to implement the features requested in this challenge:
 
 * Add a new product to your cart
@@ -26,7 +25,7 @@ This will be an application where your main objective is to create a shopping ca
 ## 💻 Project Image
 
 <div align="center">
-   <img src="./.github/rocketshoes.png" alt="imagem do Projeto"/> 
+   <img src="src/assets/rocketshoes.png" alt="imagem do Projeto"/> 
    </br>
 </div>
 
@@ -44,7 +43,7 @@ This project was developed with the following technologies:
 
 ## ⚙️ Installation
 ```bash
-# You need to install Node.js, then in order to clone the project via HTTPS, run this command:
+# You need to install Node.js and Yarn first, then in order to clone the project via HTTPS, run this command:
 $ https://github.com/LeonardoMarquesDias/Rocketshoes-Cart-ReactJS.git
 # or use the download option.
 
@@ -59,15 +58,15 @@ or
 $ npm server
 
 # Run the following command to start the application in a development environment:
-$ yarn start 
+$ yarn dev 
 or
-$ npm start
+$ npm dev
 
 # Access http://localhost:3000 
 ```
 ## 🌐 Reference
 
-[Desafio 02 - GoRestaurant](https://www.notion.so/Desafio-02-Refactoring-de-classes-e-typescript-4571541e7f8c4799bd191b6cfb53802c) - Notion Info.
+[challenge 01 - GoRestaurant](https://www.notion.so/Desafio-01-Criando-um-hook-de-carrinho-de-compras-5769216778794019a83f544e79167b12) - Notion Info.
 
 
 ## 📝 License
