@@ -14,13 +14,13 @@
 ## 🚀 About the Project
 This will be an application where your main objective is to create a shopping cart hook. You will have access to two pages, a component and a hook to implement the features requested in this challenge:
 
-* Add a new product to your cart
-* Remove a product from the cart
-* Change the quantity of a product in the cart
-* Calculation of sub-total and total cart prices
-* Stock validation
-* Displaying error messages
-* Between others
+* Add a new product to your cart.
+* Remove a product from the cart.
+* Change the quantity of a product in the cart.
+* Calculation of sub-total and total cart prices.
+* Stock validation.
+* Displaying error messages.
+* Between others.
 
 ## 💻 Project Image
 
