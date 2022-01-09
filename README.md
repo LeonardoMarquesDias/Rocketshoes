@@ -6,11 +6,6 @@
 
 <h2 align="center"> challenge 01 : Componentizing the App ( Project Rocketshoes ) </h2>
 
-<p align="center">
-  <a href="https://rocketseat.com.br">
-    <img alt="Rocketseat" src="https://img.shields.io/badge/made%20by-Rocketseat-%2306b656?style=flat-square">
-</p>
-
 ## 🚀 About the Project
 This will be an application where your main objective is to create a shopping cart hook. You will have access to two pages, a component and a hook to implement the features requested in this challenge:
 
